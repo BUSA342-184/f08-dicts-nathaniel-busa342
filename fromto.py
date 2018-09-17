@@ -33,21 +33,15 @@ def main():
                 # If the line starts with 'From:'
                 if line.startswith('From:'):
                     # Set the default count to zero if this is the first
-                    # Time the user or host is being added to the dict
-                    from_user.setdefault(user, 0)
-                    from_host.setdefault(host, 0)
-                    # Increment the count of the user and host
-                    from_user[user] += 1
-                    from_host[host] += 1
+                    # time the user or host is being added to the dict
+                    from_user[user] = from_user.get(user, 0) + 1
+                    from_host[host] = from_host.get(host, 0) + 1
                 # If the line starts with 'To:'
                 elif line.startswith('To:'):
                     # Set the default count to zero if this is the first
                     # time the user or host is being added to the dict
-                    to_user.setdefault(user, 0)
-                    to_host.setdefault(host, 0)
-                    # Increment the count of the user and host
-                    to_user[user] += 1
-                    to_host[host] += 1
+                    to_user[user] = to_user.get(user, 0) + 1
+                    to_host[host] = to_host.get(host, 0) + 1
     
     # Create a csv writer that writes to stdout
     cw = csv.writer(sys.stdout)
