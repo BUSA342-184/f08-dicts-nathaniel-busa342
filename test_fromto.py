@@ -7,34 +7,34 @@ import os
 
 expected = """
 --- FROM USER ---
-antranig,1\n
-cwen,5\n
-david.horwitz,4\n
-gopal.ramasammycook,1\n
-gsilver,3\n
-louis,3\n
-ray,1\n
-rjlowe,2\n
-stephen.marquard,2\n
-wagnermr,1\n
-zqian,4\n
+antranig,1
+cwen,5
+david.horwitz,4
+gopal.ramasammycook,1
+gsilver,3
+louis,3
+ray,1
+rjlowe,2
+stephen.marquard,2
+wagnermr,1
+zqian,4
 --- FROM HOST ---
-caret.cam.ac.uk,1\n
-gmail.com,1\n
-iupui.edu,8\n
-media.berkeley.edu,4\n
-uct.ac.za,6\n
-umich.edu,7\n
+caret.cam.ac.uk,1
+gmail.com,1
+iupui.edu,8
+media.berkeley.edu,4
+uct.ac.za,6
+umich.edu,7
 --- TO USER ---
-source,27\n
+source,27
 --- TO HOST ---
-collab.sakaiproject.org,27\n
+collab.sakaiproject.org,27
 """
 
 def test_output():
     '''Test output.'''
     # use Popen to launch the Python script
-    sp = subprocess.Popen(['python', 'fromto.py'], bufsize=1,
+    sp = subprocess.Popen(['python3', 'fromto.py'], bufsize=1,
          universal_newlines=True,
          stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     # enter the inputs
